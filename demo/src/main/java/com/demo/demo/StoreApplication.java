@@ -1,13 +1,14 @@
 package com.demo.demo;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class StoreApplication {
    public static void main(String[] args) {
-    // SpringBootApplication.run(StoreApplication.class, args);
-    var orderService = new OrderService();
-    orderService.setPaymentService(new PayPallPaymentService());
+    ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
+    var orderService = context.getBean(OrderService.class);
     orderService.placeOrder();
    }
 }
