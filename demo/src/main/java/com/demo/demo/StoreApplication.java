@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StoreApplication {
    public static void main(String[] args) {
     // SpringBootApplication.run(StoreApplication.class, args);
-    var orderService = new OrderService(new PayPallPaymentService());
+    var orderService = new OrderService();
+   //  orderService.setPaymentService(new PayPallPaymentService());
     orderService.placeOrder();
    }
 }
