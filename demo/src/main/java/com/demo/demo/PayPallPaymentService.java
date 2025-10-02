@@ -1,8 +1,10 @@
 package com.demo.demo;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("paypal")
+@Qualifier
 public class PayPallPaymentService implements PaymentService {
     @Override
     public void processPayment(double amount) {

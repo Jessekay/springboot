@@ -1,6 +1,7 @@
 package com.demo.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -9,7 +10,7 @@ public class OrderService {
     private PaymentService paymentService;
 
     
-    public OrderService(PaymentService paymentService, int x) {
+    public OrderService(@Qualifier("paypal")PaymentService paymentService, int x) {
       this.paymentService = paymentService;
     }
     
